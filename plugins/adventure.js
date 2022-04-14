@@ -32,7 +32,7 @@ let handler = async (m, { conn, usedPrefix, DevMode }) => {
             let sampah = `${Math.floor(Math.random() * 300)}`.trim()
             let legendary = (_legendary * 1)
             let str = `
-Nyawa mu berkurang -${healt * 1} karena Kamu telah berpetualang sampai ${pickRandom(['Jepang', 'Korea', 'Bali', 'Amerika', 'Iraq', 'Arab', 'Pakistan', 'German', 'Finlandia', 'Ke bawa dunia mimpi', 'Ujung dunia', 'Mars', 'Bulan', 'Pluto', 'Matahari', 'Hatinya dia', '...'])} dan mendapatkan
+Tu vida se reduce -${healt * 1} porque te has aventurado a ${pickRandom(['Jepang', 'Korea', 'Bali', 'Amerika', 'Iraq', 'Arab', 'Pakistan', 'German', 'Finlandia', 'Ke bawa dunia mimpi', 'Ujung dunia', 'Mars', 'Bulan', 'Pluto', 'Matahari', 'Hatinya dia', '...'])} dan mendapatkan
 *exp:* ${exp} 
 *uang:* ${uang}
 *sampah:* ${sampah}${potion == 0 ? '' : '\n*Potion:* ' + potion + ''}${diamond == 0 ? '' : '\n*diamond:* ' + diamond + ''}${common == 0 ? '' : '\n*common crate:* ' + common + ''}${uncommon == 0 ? '' : '\n*uncommon crate:* ' + uncommon + ''}
@@ -56,7 +56,7 @@ Nyawa mu berkurang -${healt * 1} karena Kamu telah berpetualang sampai ${pickRan
             global.DATABASE._data.users[m.sender].sampah += sampah * 1
             global.DATABASE._data.users[m.sender].lastadventure = new Date * 1
             } else conn.reply(m.chat, `Anda sudah berpetualang dan kelelahan, silahkan coba *${timers}* lagi`, m)
-        } else conn.reply(m.chat, 'Minimal 80 health untuk bisa berpetualang, beli nyawa dulu dengan ketik *' + usedPrefix + 'shop buy potion <jumlah>*\ndan ketik *' + usedPrefix + 'use potion <jumlah>*\n\n_Untuk mendapat money dan potion gratis ketik_ *' + usedPrefix + 'claim*', m)
+        } else conn.reply(m.chat, 'Mínimo 80 de salud para poder aventurarse, comprar vida primero escribiendo *' + usedPrefix + 'shop buy potion <jumlah>*\ndan ketik *' + usedPrefix + 'use potion <jumlah>*\n\n_para obtener dinero gratis y tipo de potiones_ *' + usedPrefix + 'claim*', m)
     } catch (e) {
         console.log(e)
         conn.reply(m.chat, 'Error', m)
