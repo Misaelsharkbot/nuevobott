@@ -12,7 +12,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let json = src[Math.floor(Math.random() * src.length)]
     let caption = `
 ${json.soal}
-Timeout *${(timeout / 1000).toFixed(2)} detik*
+Timeout *${(timeout / 1000).toFixed(2)} segundos*
 Tipo ${usedPrefix}ao untuk bantuan
 Bonus: ${poin} XP
     `.trim()
