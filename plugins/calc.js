@@ -4,7 +4,7 @@ let handler = async (m, { conn, text }) => {
   if (id in global.math) {
     clearTimeout(global.math[id][3])
     delete global.math[id]
-    m.reply('Hmmm...ngecheat?')
+    m.reply('Hmmm...trampa?')
   }
   let val = text
     .replace(/[^0-9\-\/+*×÷πEe()piPI/]/g, '')
@@ -26,8 +26,8 @@ let handler = async (m, { conn, text }) => {
     if (!result) throw result
     m.reply(`*${format}* = _${result}_`)
   } catch (e) {
-    if (e == undefined) throw 'Isinya?'
-    throw 'Format salah, hanya 0-9 dan Simbol -, +, *, /, ×, ÷, π, e, (, ) yang disupport'
+    if (e == undefined) throw '¿Qué hay ahí dentro?'
+    throw 'Formato incorrecto, solo se admiten 0-9 y símbolos -, +, *, /, ×,÷, π, e, (, )'
   }
 }
 handler.help = ['calc <expression>']
