@@ -7,10 +7,10 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   user.afkReason = text
   let nani = 'https://telegra.ph/file/bfad1ea59a4ebdaab8107.jpg'
   await conn.sendButtonLoc(m.chat, await (await fetch(nani)).buffer(), `
-Fitur AFK Berhasil Diaktifkan!
+¡Función AFK activada con éxito!
 
-» User Name : ${conn.getName(m.sender)}
-» Alasan : ${text ? '' + text : 'No Text'}
+» Nombre de usuario : ${conn.getName(m.sender)}
+» Motivo : ${text ? '' + text : 'No Text'}
 `.trim(), '', 'Ok', 'ok')
 
 }
