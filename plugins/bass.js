@@ -22,7 +22,7 @@ let handler = async (m, { conn }) => {
 						conn.sendFile(m.chat, buff, ran, null, m, true)
 						fs.unlinkSync(ran)
             })
-        } else m.reply('Kirim audio atau tag audio!!')
+        } else m.reply('Enviar un audio o etiqueta un audio!!')
     } catch (e) {
         console.log(e)
         m.reply('Error! !')
