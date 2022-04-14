@@ -10,9 +10,9 @@ let handler = async (m, { conn, command, args }) => {
     if (isDelete || isClear) await conn.modifyChat(id, (isDelete ? 'delete' : 'clear'), {
       includeStarred: false
     }).catch(console.log)
-    else await conn.modifyChat(id, 'mute', -Math.floor(new Date / 1e3) * 1e3 - 1e3).catch(console.log)
+    else await conn.modifyChat(id, 'silencio', -Math.floor(new Date / 1e3) * 1e3 - 1e3).catch(console.log)
   }
-  conn.reply(m.chat, chats.length + ` chat ${args[0] ? args[0] : ''} telah dib` + ((isDelete || isClear) ? 'ersihkan' : 'isukan selamanya'), m)
+  conn.reply(m.chat, chats.length + ` chat ${args[0] ? args[0] : ''} se ha abierto` + ((isDelete || isClear) ? 'Limpiar' : 'rumores para siempre'), m)
 }
 handler.help = [
   'clearchat', 
