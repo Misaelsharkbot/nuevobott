@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, text, isPrems }) => {
-  if (!text) return m.reply('Mau cari gambar apa?')
+  if (!text) return m.reply('¿Qué imagen estás buscando?')
   let [query,  jumlah] = text.split`|`
   if (isNaN(jumlah)) jumlah = 1
   if ((jumlah * 1) > 30) jumlah = 30
@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, isPrems }) => {
   if (json.status !== true) throw json
   if ((jumlah * 1) > 1 && !isPrems) { 
       jumlah = 1
-      m.reply('Untuk Jumlah yang lebih banyak anda harus menjadi member *Premium*')
+      m.reply('Para más cantidad tienes que ser miembro *Premium*')
   }
   for (let i = 0; i < jumlah; i++) { 
       try {
@@ -17,7 +17,7 @@ let handler = async (m, { conn, text, isPrems }) => {
           conn.sendFile(m.chat, url, 'MetroBot-image.jpg', `*Url:* ${url}`.trim(), m)
       } catch (e) {
           console.log(e)
-          m.reply('Error in sending image')
+          m.reply('Error al enviar imagen')
       }
   }
 }
