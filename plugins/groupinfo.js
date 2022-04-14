@@ -20,19 +20,19 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
 *ID:* 
 ${groupMetadata.id}
 
-*Name:* 
+*Nombro:* 
 ${groupMetadata.subject}
 
-*Description:* 
+*Descripcion:* 
 ${groupMetadata.desc}
 
-*Total Members:*
-${participants.length} Members
+*Total Miembros:*
+${participants.length} Miembros
 
-*Group Owner:* 
+*Propietario del grupo:* 
 @${m.chat.split`-`[0]}
 
-*Group Admins:*
+*Admins del grupo:*
 ${listAdmin}
 
 *Group Settings:*
@@ -42,7 +42,7 @@ ${detect ? '✅' : '❌'} Detect
 ${global.DATABASE.data.chats[m.chat].delete ? '❌' : '✅'} Anti Delete
 ${antiLink ? '✅' : '❌'} Anti Link
 
-*Message Settings:*
+*Configuración de mensajes:*
 Welcome: ${sWelcome}
 Bye: ${sBye}
 Promote: ${sPromote}
