@@ -8,7 +8,7 @@ let handler = async (m, { conn, text, usedPrefix, participants, groupMetadata })
     let res = await conn.query({
         json: ["action", "invite", code]
     })
-    if (res.status !== 200) throw `Tidak Dapat Masuk,, mungkin link telah direset ulang atau Bot telah dikeluarkan oleh seseorang.`
+    if (res.status !== 200) throw `no se pudo entrar, tal vez el enlace se haya restablecido o alguien haya eliminado el Bot.`
     if (global.DATABASE.data.chats[m.chat].welcome) throw false
     let grup = await conn.getName(res.gid)
     let time = async (ms) => { return new Promise(resolve => setTimeout(resolve, ms)); }
@@ -16,13 +16,13 @@ let handler = async (m, { conn, text, usedPrefix, participants, groupMetadata })
     let limit = 35
     let member = data.length
     if (member <= limit) {
-      conn.reply(res.gid, `Maaf ${joiner} Bot tidak dapat masuk,, Minimal Member harus ${limit} orang.`)
+      conn.reply(res.gid, `Lo siento ${joiner} Los bots no pueden entrar, al menos un miembro debe ser ${limit} gente.`)
       await time(3000)
-      conn.reply(res.gid, `Maaf Semua,, Bot akan keluar..`)
+      conn.reply(res.gid, `Lo siento todo, Bot está saliendo..`)
       await time(2000)
  await conn.groupLeave(res.gid)
   } else if (member => limit) {
-     conn.send2Button(m.chat, res.gid, `Hallo Member Grup\n*${grup}*\nAku telah ditambahkan oleh *${joiner}*\n\nKetik ${usedPrefix}menu untuk memulai Bot yaa`, '', 'MENU', '#menu', 'DONASI', '#donasi')
+     conn.send2Button(m.chat, res.gid, `Hola miembros del grupo\n*${grup}*\nFui agregado por *${joiner}*\n\nPongan ${usedPrefix}menú para iniciar bot yaa`, '', 'MENU', '#menu', 'DONASI', '#donasi')
  }
 }
 handler.help = ['join <link gc>']
