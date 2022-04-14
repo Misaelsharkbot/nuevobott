@@ -6,8 +6,8 @@ let handler = async (m, { conn, args, usedPrefix }) => {
     let kucing = global.DATABASE._data.users[m.sender].kucing
     switch (type) {
         case 'rubah':
-            if (rubah == 0) return m.reply('*Kamu belum memiliki Pet Rubah*')
-            if (rubah == 5) return m.reply('*Pet kamu dah lvl max*')
+            if (rubah == 0) return m.reply('*Aún no tienes un zorro mascota*')
+            if (rubah == 5) return m.reply('*Tu mascota es lvl max*')
             let __waktur = (new Date - global.DATABASE._data.users[m.sender].rubahlastclaim)
             let _waktur = (600000 - __waktur)
             let waktur = clockString(_waktur)
@@ -16,21 +16,21 @@ let handler = async (m, { conn, args, usedPrefix }) => {
                     global.DATABASE._data.users[m.sender].makananpet -= 1
                     global.DATABASE._data.users[m.sender].anakrubah += 20
                     global.DATABASE._data.users[m.sender].rubahlastclaim = new Date * 1
-                    conn.reply(m.chat, `Berhasil memberi makan pet ${type}`, m)
+                    conn.reply(m.chat, `Alimenta con éxito a la mascota ${type}`, m)
                     if (rubah > 0) {
                         let naiklvl = ((rubah * 100) - 1)
                         if (global.DATABASE._data.users[m.sender].anakrubah > naiklvl) {
                             global.DATABASE._data.users[m.sender].rubah += 1
                             global.DATABASE._data.users[m.sender].anakrubah -= (rubah * 100)
-                            conn.reply(m.chat, `*Selamat Pet Rubah kamu naik level*`, m)
+                            conn.reply(m.chat, `*Felicitaciones, Pet Fox, subiste de nivel*`, m)
                         }
                     }
-                } else m.reply(`Makanan pet kamu tidak cukup`)
-            } else m.reply(`Pet kamu sudah kenyang, coba kasih makan *${waktur}* lagi`)
+                } else m.reply(`La comida de tu mascota no es suficiente`)
+            } else m.reply(`Tu mascota está llena, prueba a darle de comer *${waktur}* otra vez`)
             break
         case 'kuda':
-            if (kuda == 0) return m.reply('*Kamu belum memiliki Pet Kuda*')
-            if (kuda == 5) return m.reply('*Pet kamu dah lvl max*')
+            if (kuda == 0) return m.reply('*Aún no tienes un caballo mascota*')
+            if (kuda == 5) return m.reply('*Tu mascota es lvl max*')
             let __waktuk = (new Date - global.DATABASE._data.users[m.sender].kudalastclaim)
             let _waktuk = (600000 - __waktuk)
             let waktuk = clockString(_waktuk)
@@ -39,21 +39,21 @@ let handler = async (m, { conn, args, usedPrefix }) => {
                     global.DATABASE._data.users[m.sender].makananpet -= 1
                     global.DATABASE._data.users[m.sender].anakkuda += 20
                     global.DATABASE._data.users[m.sender].kudalastclaim = new Date * 1
-                    conn.reply(m.chat, `Berhasil memberi makan pet ${type}`, m)
+                    conn.reply(m.chat, `Alimenta con éxito a la mascota ${type}`, m)
                     if (kuda > 0) {
                         let naiklvl = ((kuda * 100) - 1)
                         if (global.DATABASE._data.users[m.sender].anakkuda > naiklvl) {
                             global.DATABASE._data.users[m.sender].kuda += 1
                             global.DATABASE._data.users[m.sender].anakkuda -= (kuda * 100)
-                            conn.reply(m.chat, `*Selamat Pet Kuda kamu naik level*`, m)
+                            conn.reply(m.chat, `*Felicitaciones, Pet Horse, subiste de nivel*`, m)
                         }
                     }
-                } else m.reply(`Makanan pet kamu tidak cukup`)
-            } else m.reply(`Pet kamu sudah kenyang, coba kasih makan *${waktuk}* lagi`)
+                } else m.reply(`La comida de tu mascota no es suficiente`)
+            } else m.reply(`Tu mascota está llena, prueba a darle de comer *${waktuk}* otra vez`)
             break
         case 'naga':
-            if (naga == 0) return m.reply('*Kamu belum memiliki Pet Naga*')
-            if (naga == 5) return m.reply('*Pet kamu dah lvl max*')
+            if (naga == 0) return m.reply('*Aún no tienes una mascota dragón*')
+            if (naga == 5) return m.reply('*Tu mascota es lvl max*')
             let __waktuu = (new Date - global.DATABASE._data.users[m.sender].nagalastclaim)
             let _waktuu = (600000 - __waktuu)
             let waktuu = clockString(_waktuu)
@@ -68,15 +68,15 @@ let handler = async (m, { conn, args, usedPrefix }) => {
                         if (global.DATABASE._data.users[m.sender].anaknaga > naiklvl) {
                             global.DATABASE._data.users[m.sender].naga += 1
                             global.DATABASE._data.users[m.sender].anaknaga -= (naga * 100)
-                            conn.reply(m.chat, `*Selamat Pet Naga kamu naik level*`, m)
+                            conn.reply(m.chat, `*Felicidades Pet Dragon has subido de nivel*`, m)
                         }
                     }
-                } else m.reply(`Makanan pet kamu tidak cukup`)
-            } else m.reply(`Pet kamu sudah kenyang, coba kasih makan *${waktuk}* lagi`)
+                } else m.reply(`La comida de tu mascota no es suficiente`)
+            } else m.reply(`Tu mascota está llena, prueba a darle de comer *${waktuk}* otra vez`)
             break
         case 'kucing':
-            if (kucing == 0) return m.reply('*Kamu belum memiliki Pet Kucing*')
-            if (kucing == 5) return m.reply('*Pet kamu dah lvl max*')
+            if (kucing == 0) return m.reply('*Aún no tienes un gato mascota*')
+            if (kucing == 5) return m.reply('*Tu mascota es lvl max*')
             let __waktu = (new Date - global.DATABASE._data.users[m.sender].kucinglastclaim)
             let _waktu = (600000 - __waktu)
             let waktu = clockString(_waktu)
@@ -85,20 +85,20 @@ let handler = async (m, { conn, args, usedPrefix }) => {
                     global.DATABASE._data.users[m.sender].makananpet -= 1
                     global.DATABASE._data.users[m.sender].anakkucing += 20
                     global.DATABASE._data.users[m.sender].kucinglastclaim = new Date * 1
-                    conn.reply(m.chat, `Berhasil memberi makan pet ${type}`, m)
+                    conn.reply(m.chat, `Alimenta con éxito a la mascota ${type}`, m)
                     if (kucing > 0) { 
                         let naiklvl = ((kucing * 100) - 1)
                         if (global.DATABASE._data.users[m.sender].anakkucing > naiklvl) {
                             global.DATABASE._data.users[m.sender].kucing += 1
                             global.DATABASE._data.users[m.sender].anakkucing -= (kucing * 100)
-                            conn.reply(m.chat, `*Selamat Pet Kucing kamu naik level*`, m)
+                            conn.reply(m.chat, `*Felicitaciones Pet Cat, subiste de nivel*`, m)
                         }
                     }
-                } else m.reply(`Makanan pet kamu tidak cukup`)
-            } else m.reply(`Pet kamu sudah kenyang, coba kasih makan *${waktu}* lagi`)
+                } else m.reply(`La comida de tu mascota no es suficiente`)
+            } else m.reply(`Tu mascota está llena, prueba a darle de comer *${waktu}* otra vez`)
             break
         default:
-            return conn.reply(m.chat, `${usedPrefix}feed [kucing | rubah | kuda | naga]\nContoh penggunaan: *${usedPrefix}feed kucing*`, m)
+            return conn.reply(m.chat, `${usedPrefix}feed [kucing | rubah | kuda | naga]\nEjemplos de uso: *${usedPrefix}feed kucing*`, m)
     }
 }
 handler.help = ['feed [pet type]']
