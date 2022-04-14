@@ -8,7 +8,7 @@ let handler = async (m, { conn }) => {
 {buttonId: 'id1', buttonText: {displayText: 'kandang'}, type: 1}, 
 ]
 const buttonMessage = {
-    contentText: `\n*Sepertinya Anda Sudah Kecapekan*\n*Silahkan Istirahat dulu sekitar ${timers}*\n*Untuk bisa melanjutkan berburu*\n`,
+    contentText: `\n*Parece que estás cansado*\n*Descansa alrededor de ${timers}*\n*Para poder seguir cazando*\n`,
     footerText: 'Yuki', 
     buttons: buttons,
     headerType: 1
@@ -55,7 +55,7 @@ zero11 = `${rbrb11}`
 zero12 = `${rbrb12}`
 
 hsl = `
-*《 Hasil Berburu Kali Ini 》*
+*《 Resultados de caza esta vez 》*
 
  *🐂 = [ ${zero1} ]*		 	*🐃 = [ ${zero7} ]*
  *🐅 = [ ${zero2} ]*			 *🐮 = [ ${zero8} ]*
