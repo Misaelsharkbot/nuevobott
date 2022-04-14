@@ -3,7 +3,7 @@ module.exports = Object.assign(async function handler(m, { text }) {
     if (m.quoted && m.quoted.fileSha256) hash = m.quoted.fileSha256.toString('hex')
     if (!hash) throw `Tidak ada hash`
     let sticker = global.DATABASE.data.sticker
-    if (sticker[hash] && sticker[hash].locked) throw 'Kamu tidak memiliki izin untuk menghapus perintah stiker ini'
+    if (sticker[hash] && sticker[hash].locked) throw 'No tienes permiso para eliminar este comando de etiqueta'
     delete sticker[hash]
     m.reply(`Berhasil!`)
 }, {
