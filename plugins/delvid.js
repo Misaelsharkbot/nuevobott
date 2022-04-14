@@ -5,7 +5,7 @@ const { servers, yt } = require('../lib/y2mate')
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
 let fs = require('fs')
 let y = fs.readFileSync('./logo.jpg')
-  if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+  if (!args || !args[0]) throw 'Uhm... ¿dónde está la URL?'
   let chat = global.DATABASE._data.chats[m.chat]
   let quality = args[1] || '360'
   let server = (args[2] || servers[0]).toLowerCase()
@@ -14,7 +14,7 @@ let y = fs.readFileSync('./logo.jpg')
 let _thumb = {}
   try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
   catch (e) { }
-  conn.sendMessage(m.chat, `*Title:* ${title}\n*Size:* ${filesizeF}\n\n_Sending..._` , 'conversation', {quoted: m, thumbnail: y, contextInfo:{externalAdReply: {title: 'Simple WhatsApp bot', body: `© ${conn.user.name}`, sourceUrl: '', thumbnail: y}}})
+  conn.sendMessage(m.chat, `*Titulo:* ${title}\n*Tamaño:* ${filesizeF}\n\n_Sending..._` , 'conversation', {quoted: m, thumbnail: y, contextInfo:{externalAdReply: {titulo: 'Simple WhatsApp bot', body: `© ${conn.user.name}`, sourceUrl: '', thumbnail: y}}})
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp4', `
  ${title}
  © ${conn.user.name}
