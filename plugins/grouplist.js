@@ -21,9 +21,9 @@ ${conn.getName(v.jid)}\n${v.jid} [${v.read_only ? 'keluar' : 'masuk'}]\n${global
       stiker: false,
       viewonce: true,
     } : global.DATABASE.data.chats[v.jid].groupTime ? conn.msToDate(global.DATABASE.data.chats[v.jid].groupTime - new Date() * 1) : 'belum diatur'}
-${global.DATABASE.data.chats[v.jid].clear ? '✅' : '❌'} otomatis hapus chat
-${global.DATABASE.data.chats[v.jid].autoread ? '✅' : '❌'} otomatis membaca pesan
-${global.DATABASE.data.chats[v.jid].broadcast ? '✅' : '❌'} pesan siaran
+${global.DATABASE.data.chats[v.jid].clear ? '✅' : '❌'} chat de eliminación automática
+${global.DATABASE.data.chats[v.jid].autoread ? '✅' : '❌'} leer automáticamente los mensajes
+${global.DATABASE.data.chats[v.jid].broadcast ? '✅' : '❌'} mensaje de difusión
     `.trim()).join`\n\n`
   m.reply(txt)
 }
