@@ -1,10 +1,10 @@
 let handler  = async (m, { conn, text }) => {
   let chats = conn.chats.all().filter(v => !v.read_only && v.message).map(v => v.jid)
-  let content = (/bc|broadcast/i.test(text) ? teks : '*「 BROADCAST 」*\n\n' + text + '\n')
+  let content = (/bc|broadcast/i.test(text) ? teks : '*「 TRANSMISIÓN 」*\n\n' + text + '\n')
   for (let id of chats) conn.sendMessage(id, content, m.mtype, m.msg.contextInfo ? {
     contextInfo: m.msg.contextInfo
   } : {})
-  conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_`, m)
+  conn.reply(m.chat, `_Enviar un mensaje de difusión a ${chats.length} chat_`, m)
 }
 handler.help = ['broadcast','bc'].map(v => v + ' <teks>')
 handler.tags = ['owner']
