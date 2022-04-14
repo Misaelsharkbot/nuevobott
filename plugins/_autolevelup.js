@@ -10,11 +10,11 @@ handler.before = m => {
         
 	if (before !== user.level) {
             m.reply(`
-「 SELAMAT 」
-➸ Name : ${name}
+「 Has subido de nivel 」
+➸ Nombre : ${name}
 ➸ XP : ${user.exp}
-➸ Level :*${before}* -> *${user.level}* 
-Congratulations 🎉
+➸ Nivel :*${before}* -> *${user.level}* 
+Felicidades 🎉
 	`.trim())
         }
 }
