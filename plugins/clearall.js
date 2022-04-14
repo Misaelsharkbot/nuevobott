@@ -6,7 +6,7 @@ let handler = async (m, { conn, command, args }) => {
     if (isDelete) await conn.modifyChat(id, 'delete').catch(console.log)
     await conn.modifyChat(id, 'mute', -Math.floor(new Date / 1e3) * 1e3 - 1e3).catch(console.log)
   }
-  conn.reply(m.chat, `*Sukses delete All chat* `, m)
+  conn.reply(m.chat, `*Eliminado con éxito todos los chats* `, m)
 }
 handler.help = ['clearall']
 handler.tags = ['owner']
