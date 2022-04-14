@@ -10,8 +10,8 @@ handler.before = function (m, { user, isAdmin, isBotAdmin }) {
   let link = linkRegex.exec(m.text)
 
   if (chat.antiLink && link && !isAdmin && !m.isBaileys && m.isGroup && !m.fromMe) {
-  if (user.isAdmin || user.isSuperAdmin) return m.reply ('Karena Kamu Adalah Admin Group Bot tidak akan Kick Kamu')
- m.reply(`*「 ANTILINK DETECTOR 」*\nLink Gorup Terdeteksi Maaf *${name}* Kamu Telah Mengirim Link Group Kamu Akan Saya Kick :(`)
+  if (user.isAdmin || user.isSuperAdmin) return m.reply ('Como eres un administrador de grupo, el bot no te pateará.')
+ m.reply(`*「 ANTILINK DETECTOR 」*\nLink de grupo detectado Lo siento *${name}* Has enviado el enlace de tu grupo. Lo patearé :(`)
    this.groupRemove(m.chat, [m.sender])
   }
 }
