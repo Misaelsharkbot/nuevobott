@@ -1,11 +1,11 @@
 let handler = async (m, { conn, participants }) => {
   // if (participants.map(v=>v.jid).includes(global.conn.user.jid)) {
-    if (!(m.chat in global.DATABASE._data.chats)) return m.reply('Chat ini tidak terdaftar dalam DATABASE!')
+    if (!(m.chat in global.DATABASE._data.chats)) return m.reply('¡Este chat no está registrado en la BASE DE DATOS!')
     let chat = global.DATABASE._data.chats[m.chat]
-    if (chat.isBanned) return m.reply('Chat ini sudah Terbanned!')
+    if (chat.isBanned) return m.reply('Este chat ha sido baneado!')
     chat.isBanned = true
-    m.reply('Done!')
-  // } else m.reply('Ada nomor host disini...')
+    m.reply('*LISTO!*')
+  // } else m.reply('Hay un número de anfitrión aquí...')
 }
 handler.help = ['banchat']
 handler.tags = ['owner']
