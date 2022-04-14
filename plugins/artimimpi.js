@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { text }) => {
-  if (!text) return m.reply('Mimpi apa? ')
+  if (!text) return m.reply('¿Qué sueño es? ')
   let res = await fetch(global.API('bg',  '/artimimpi', { mimpi: text }))
   let json = await res.json()
   if (json.status !== true) throw json
