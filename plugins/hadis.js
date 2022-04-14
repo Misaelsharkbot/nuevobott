@@ -1,10 +1,10 @@
 let fetch = require('node-fetch')
 let handler = async (m, { usedPrefix, command, args }) => {
-    if (!args[0]) throw `contoh:
+    if (!args[0]) throw `Ejemplo:
 ${usedPrefix + command} bukhari 1
 ${usedPrefix + command} abu-daud 1
 
-Pilihan tersedia:
+Opciones disponibles:
 abu-daud
 1 - 4590
 ahmad
@@ -21,7 +21,7 @@ malik
 1 - 1594
 muslim
 1 - 5362`
-    if (!args[1]) throw `hadist yang ke berapa?\ncontoh: ${usedPrefix + command} ${args[0]} 1`
+    if (!args[1]) throw `¿Cuántos hadices?\nEjemplo: ${usedPrefix + command} ${args[0]} 1`
     try {
         let res = await fetch(`https://islamic-api-indonesia.herokuapp.com/api/data/json/hadith/${args[0]}`)
         let json = await res.json()
