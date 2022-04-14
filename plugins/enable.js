@@ -139,9 +139,9 @@ imeg = 'https://i.pinimg.com/originals/94/e7/21/94e721efd82d3aba7e7da4a0bde1b036
       break
     default:
       if (!/[01]/.test(command)) return m.reply(`
-List option: welcome | delete | public | antilink | antidelete | autolevelup | detect | document | restrict | nyimak | autoread | pconly | gconly | swonly
+Lista de opciones: welcome | delete | public | antilink | antidelete | autolevelup | detect | document | restrict | nyimak | autoread | pconly | gconly | swonly
 
-Contoh:
+Ejemplo:
 ${usedPrefix}enable welcome
 ${usedPrefix}disable welcome
 `.trim())
