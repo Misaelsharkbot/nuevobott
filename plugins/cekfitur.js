@@ -1,12 +1,12 @@
 let handler = async (m, { args, usedPrefix, command }) => {
-    if (!args[0]) throw `Contoh:\n${usedPrefix + command} sticker`
+    if (!args[0]) throw `Ejemplo:\n${usedPrefix + command} sticker`
     let { total, success, last, lastSuccess } = global.DATABASE.data.stats[args[0] + '.js']
     m.reply(`
 *Plugin ${args[0]}*
 *Total :* ${total}
-*Berhasil :* ${success}
-*Terakhir Kali Digunakan :* ${new Date(last)}
-*Terakhir Kali Berhasil :* ${new Date(lastSuccess)}
+*Triunfar :* ${success}
+*Utilizado por última vez :* ${new Date(last)}
+*La última vez que funcionó :* ${new Date(lastSuccess)}
 `.trim())
 }
 handler.help = ['plugins']
