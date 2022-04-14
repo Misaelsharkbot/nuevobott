@@ -6,7 +6,7 @@ let handler = async(m, { conn, text, usedPrefix }) => {
     await m.reply(global.wait)
     axios.get(`https://docs-jojo.herokuapp.com/api/cerpen`)
         .then((res) => {
-          let hasil = `*Judul:* ${res.data.result.title}\n\n*Pengarang:* ${res.data.result.pengarang}\n*Kategori:* ${res.data.result.kategori}\n\n   ${res.data.result.cerpen}`
+          let hasil = `*Título:* ${res.data.result.title}\n\n*Autor:* ${res.data.result.pengarang}\n*Categoría:* ${res.data.result.kategori}\n\n   ${res.data.result.cerpen}`
             conn.reply(m.chat, hasil, m)
         })
         .catch()
