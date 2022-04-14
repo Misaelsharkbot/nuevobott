@@ -8,7 +8,7 @@ try {
     let mime = (q.msg || q).mimetype || ''
     if (/image|video/.test(mime)) {
       let img = await q.download()
-      if (!img) throw 'Reply stiker nya!'
+      if (!img) throw '¡Responde a un sticker!'
       stiker = await sticker(img, false, `${conn.getName(m.sender)}`, require('awesome-phonenumber')(`+${m.sender.replace(/@.+/, '')}`). getNumber('international'))
     } else if (args[0]) stiker = await sticker(false, args[0], ` Punya ${conn.getName(m.sender)}`, require('awesome-phonenumber')(`+${m.sender.replace(/@.+/, '')}`). getNumber('international'))
   } finally {
