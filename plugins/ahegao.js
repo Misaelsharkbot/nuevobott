@@ -1,8 +1,8 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
    response = args.join(' ')
-  if (!args) throw 'Masukkan Parameter'
-  m.reply('Sedang Diproses...')
+  if (!args) throw 'Introducir parámetros'
+  m.reply('Siendo procesado...')
   let res = `https://api.lolhuman.xyz/api/random/nsfw/ahegao?apikey=1221a9c62630c6207ebb4761`
   conn.sendFile(m.chat, res, 'ahegao.jpg', `Wangy Wangy wangy`, m, false)
 }
