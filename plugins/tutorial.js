@@ -1,39 +1,39 @@
 let handler  = async (m, { conn, usedPrefix }) => {
   conn.reply(m.chat, `
-╭─「 *Tutorial Main METRO BOT* 」
+╭─「 *Tutoriales de METRO BOT* 」
 │ 
 │〘 Tutorial EPIC RPG 〙
 │• *${usedPrefix}claim*
-│   Staterpack yang bisa di klaim 
-│   12 jam sekali
+│   Paquete de inicio reclamable
+│   cada 12 horas
 │• *${usedPrefix}mulung*
 │• *${usedPrefix}adventure*
 │• *${usedPrefix}petualang*
-│   Untuk mencari resource seperti 
-│   Money, Exp, dll..,dibutuhkan  
-│   minimal 80 nyawa untuk bisa 
-│   melakukannya dan, kamu tidak 
-│   dapat spam karena ada delay 5 
-│   menit
+│   Para encontrar recursos como
+│   Dinero, Exp, etc..., requiere
+│   al menos 80 vidas para poder
+│   hacerlo y no puedes enviar
+│   spam porque hay un retraso de 5
+│   minuto
 │• *${usedPrefix}use potion <jumlah>*
-│   Untuk memakai potion/untuk 
-│   mengisi nyawa/health
+│   Para usar una poción/untuk 
+│   llenar vida/health
 │• *${usedPrefix}shop buy potion <jumlah>*
-│   Untuk membeli potion dan ketik 
+│   Para comprar una poción y escribe
 │   *${usedPrefix}use potion <jumlah>*
-│   untuk menggunakan potion
+│   para usar pociones
 │• *${usedPrefix}shop <args>*
-│   Untuk membeli atau menjual sesuatu
+│   comprar o vender algo
 │• *${usedPrefix}shop buy <crate> <jumlah>*
-│   Untuk membeli Crate
+│   Comprar Caja
 │• *${usedPrefix}profile*
 │• *${usedPrefix}pp*
 │• *${usedPrefix}profil*
-│   untuk mengetahui No whatsapmu, dll
+│   para saber tu número de whatsapp, etc.
 │• *${usedPrefix}inv*
 │• *${usedPrefix}inventory*
 │• *${usedPrefix}bal*
-│   Untuk mengecek nyawa, money, dll.
+│   Para comprobar la vida, el dinero, etc.
 │• *${usedPrefix}judi <jumlah>*
 │   *_Jangan judi, Karena gk bakal_*
 │   *_balik modal.BENERAN GK BOHONG_*
