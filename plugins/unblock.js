@@ -3,7 +3,7 @@ let handler = async (m, { conn }) => {
  let who
  if (m.isGroup) who = m.mentionedJid[0]
  else who = m.chat
- if (!who) throw 'Tag Orang yang mau diunblock!'
+ if (!who) throw '¡Etiqueta a la persona que quieres desbloquear!'
  let user = `${who.split("@s.whatsapp.net")[0]}` + '@c.us'
     await conn.blockUser(user, 'remove')
   conn.reply(m.chat, `Done!`, m)
