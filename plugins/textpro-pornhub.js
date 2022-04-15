@@ -3,10 +3,10 @@ const axios = require ("axios")
 const { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, args, text}) => {
     let [au,ow]= text.split(/[&|.]/i)
-    	  if (!au) return conn.reply(m.chat, 'Masukan Teks pertama', m)
-	  if (!ow) return conn.reply(m.chat, 'Teks Keduanya mana?', m)
-	  if(au.length > 6) return conn.reply(m.chat, `*maksimal 6 huruf*`, m)
-	  if(ow.length > 6) return conn.reply(m.chat, `*maksimal 6 huruf*`, m)
+    	  if (!au) return conn.reply(m.chat, 'Ingrese el texto primero', m)
+	  if (!ow) return conn.reply(m.chat, '¿Dónde están los dos textos?', m)
+	  if(au.length > 6) return conn.reply(m.chat, `*máximo 6 letras*`, m)
+	  if(ow.length > 6) return conn.reply(m.chat, `*máximo 6 letras*`, m)
     textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [`${au}`,`${ow}`])
 .then(async (data) => {
 let au = `${data}`
