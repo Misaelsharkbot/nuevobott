@@ -609,7 +609,7 @@ ${(global.linkGC).map((v, i) => '*Group ' + (i + 1) + '*\n' + v).join`\n\n`}
     await this.reply(m.key.remoteJid, `
 Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
 
-Untuk mematikan fitur ini, ketik
+Para desactivar esta función, escriba
 *.disable delete*
 `.trim(), m.message, {
       contextInfo: {
@@ -629,7 +629,7 @@ Untuk mematikan fitur ini, ketik
                     return
                 break
         }
-        await this.sendMessage(from, 'Bot Tidak Menerima Panggilan. Maaf Anda akan diblokir, silakan hubungi pemilik bot ini untuk membuka blokir ini wa.me/62895603352610 atau wa.me/62895612153565', MessageType.extendedText)
+        await this.sendMessage(from, 'El bot no recibe llamadas. Lo sentimos, será bloqueado, comuníquese con el propietario de este bot para desbloquear este wa.me/51977783315', MessageType.extendedText)
         await this.blockUser(from, 'add')
     }
 }
@@ -637,16 +637,16 @@ Untuk mematikan fitur ini, ketik
 global.dfail = (type, m, conn) => {
  let name = conn.getName(m.sender)
   let msg = {
-    rowner: '_*「 ! 」Owner Only*_', 
-    owner: '_*「 ! 」Owner Only*_',
-    mods: '_*「 ! 」Moderator Only*_',
-    premium: '_「 ! 」FITUR INI KHUSUS UNTUK PREMIUM KETIK #owner UNTUK MEMBELI PREMIUM_',
-    group: '_*「 ! 」Group Only*_',
-    private: '_*「 ! 」Private Only*_',
-    admin: '_*「 ! 」Admin Group Only*_',
-    botAdmin: '_*「 ! 」Jadi Kan Bot Admin Dulu Sebelum Menggunakan Fitur Ini*_',    
-    nsfw : 'NFSW Not Active',
-    unreg: `Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar ${name}.16*`,
+    rowner: '_*「 ! 」Solo propietario*_', 
+    owner: '_*「 ! 」Solo propietario*_',
+    mods: '_*「 ! 」Solo moderadores*_',
+    premium: '_「 ! 」ESTA CARACTERÍSTICA ES SOLO PARA EL TIPO PREMIUM #owner PARA COMPRAR PREMIUM_',
+    group: '_*「 ! 」Solo Grupo*_',
+    private: '_*「 ! 」Solo Privado*_',
+    admin: '_*「 ! 」Solo grupo de administración puede usar el comando*_',
+    botAdmin: '_*「 ! 」EL bot debe ser administrador antes de usar esta función*_',    
+    nsfw : 'NFSW no activo',
+    unreg: `Regístrese para usar esta función escribiendo:\n\n*#daftar nama.umur*\n\nContoh: *#daftar ${name}.16*`,
   }[type]
   if (msg) return m.reply(msg)
 }
