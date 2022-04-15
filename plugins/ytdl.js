@@ -3,7 +3,7 @@ let fetch = require('node-fetch')
 const { servers, yt } = require('../lib/y2mate')
 
 let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, text }) => {
-  if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+  if (!args || !args[0]) throw 'Uhm... ¿dónde está la URL?'
   let chat = global.DATABASE._data.chats[m.chat]
   let quality = args[1] || '360'
   let server = (args[2] || servers[0]).toLowerCase()
@@ -12,7 +12,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, text }) => {
   let isLimit = (isPrems || isOwner ? 99 : limit) * 998888 < filesize
 await conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
                     "listMessage":  {
-                        "title": `*Title*: ${title}`,
+                        "title": `*Titulo*: ${title}`,
                         "description": " \n Simple WhatsApp Bot ",
                         "buttonText": `MENU`,
                         "listType": "SINGLE_SELECT",
