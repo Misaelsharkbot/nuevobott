@@ -3,7 +3,7 @@ const translate = require('translate-google-api')
 // made with love, by Ariffb
 // wa.me/6283128734012
 let handler = async (m, { conn, text, usedPrefix }) => {
-    if (!text) throw `contoh: \n\n${usedPrefix}tr id|thankyou\n\nBahasa yang didukung: https://cloud.google.com/translate/docs/languages`
+    if (!text) throw `Ejemplo: \n\n${usedPrefix}tr id|thankyou\n\nIdiomas admitidos: https://cloud.google.com/translate/docs/languages`
 
     let [to, trans] = text.split`|`
 
