@@ -18,13 +18,13 @@ let handler = async (m) => {
 		if (code !== 0) throw msg
 		let { title, artists, album, genres, release_date } = res.metadata.music[0]
 		let txt = `
-*RESULT FOUND*
+*RESULTADO ENCONTRADO*
 
-*• Title:* ${title}
-*• Artist:* ${artists !== undefined ? artists.map(v => v.name).join(', ') : ''}
+*• Titulo:* ${title}
+*• Artista:* ${artists !== undefined ? artists.map(v => v.name).join(', ') : ''}
 *• Album:* ${album.name || ''}
-*• Genres:* ${genres !== undefined ? genres.map(v => v.name).join(', ') : ''}
-*• Release Date:* ${release_date}
+*• Genero:* ${genres !== undefined ? genres.map(v => v.name).join(', ') : ''}
+*• Fecha de lanzamiento:* ${release_date}
 `.trim()
 		fs.unlinkSync(`./${m.sender}.${ext}`)
 		await m.reply(txt)
