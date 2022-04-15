@@ -11,14 +11,14 @@ let pp = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gam
 
   } finally {
   let user = global.DATABASE._data.users[m.sender]
-  if (user.registered === true) throw `Anda sudah terdaftar\nIngin mendaftar ulang? ${usedPrefix}unreg <SN|SERIAL NUMBER>`
-  if (!Reg.test(text)) throw `Format Salah\n*${usedPrefix}daftar nama.umur*`
+  if (user.registered === true) throw `Ya está registrado\n¿Quieres volver a registrarte? ${usedPrefix}unreg <SN|SERIAL NUMBER>`
+  if (!Reg.test(text)) throw `Formato erróneo\n*${usedPrefix}daftar nama.umur*`
   let [_, name, splitter, age] = text.match(Reg)
-  if (!name) throw 'Nama tidak boleh kosong (Alphanumeric)'
-  if (!age) throw 'Umur tidak boleh kosong (Angka)'
+  if (!name) throw 'El nombre no puede estar vacío (Alphanumeric)'
+  if (!age) throw 'La edad no puede estar vacía (Angka)'
   age = parseInt(age)
-  if (age > 100) throw 'Umur terlalu tua'
-  if (age < 5) throw 'Bayi bisa ngetik sesuai format bjir ._.'
+  if (age > 100) throw 'Eres muy viejo 😑'
+  if (age < 5) throw 'Los bebes pueden escribir ._.'
   user.name = name.trim()
   user.age = age
   user.regTime = + new Date
@@ -26,20 +26,20 @@ let pp = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gam
   let sn = createHash('md5').update(m.sender).digest('hex')
   let verif =`
 ╭━━━━━━━━━━━━┈ ❋ཻུ۪۪⸙
-│ *「 VERIFICATION SUKSES 」*
-│ *Terimakasih Sudah*
-│ *Mendaftarkan Diri*
-│ *Dalam Database*
+│ *「 VERIFICACIÓN DE ÉXITO 」*
+│ *GRACIAS POR IDNTIFICARTE*
+│ *Tu registro *
+│ *Ya esta guardado en la base de datos*
 ╰┬────────────┈ ⳹
-┌┤◦➛ *Nama* : ${name}
-││◦➛ *Nomor* : ${who.split`@`[0]}
-││◦➛ *Umur* : ${age} Tahun
+┌┤◦➛ *Nombre* : ${name}
+││◦➛ *Número* : ${who.split`@`[0]}
+││◦➛ *Edad* : ${age} Tahun
 ││◦➛ *SN* : ${sn}
-││◦➛ *Total Reg* : ${totalreg} Orang
-││◦➛ *Status :* ☑️ Terverifikasi
+││◦➛ *registro total* : ${totalreg} Usuarios
+││◦➛ *Estado :* ☑️ Terverifikasi
 │╰────────────┈ ⳹
-│ *Silahkan Ketik .menu*
-│ *Untuk Melanjutkan*
+│ *Por favor escribe .menu*
+│ *para Continuar*
 ╰━━━━━━━━━━━━┈ ❋ཻུ۪۪⸙
 
 *「 ${conn.getName(conn.user.jid)} 」*
