@@ -1,9 +1,9 @@
 let handler = async (m, { conn, usedPrefix }) => {
     let id = m.chat
     conn.vote = conn.vote ? conn.vote : {}
-    if (!(id in conn.vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${usedPrefix}mulaivote* - untuk memulai vote`
+    if (!(id in conn.vote)) throw `_*no hay vota en este grupo!*_\n\n*${usedPrefix}mulaivote* - para empezar a votar`
     delete conn.vote[id]
-    m.reply(`Done!`)
+    m.reply(`Hecho!`)
 
 }
 handler.help = ['hapusvote']
