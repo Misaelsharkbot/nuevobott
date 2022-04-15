@@ -2,9 +2,9 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     conn.vote = conn.vote ? conn.vote : {}
     let id = m.chat
     if (id in conn.vote) {
-        throw `_Masih ada vote di chat ini!_\n\n*${usedPrefix}hapusvote* - untuk menghapus vote`
+        throw `_¡Todavía hay votos en este chat!_\n\n*${usedPrefix}hapusvote* -para borrar votos`
     }
-    m.reply(`Vote dimulai!\n\n*${usedPrefix}upvote* - untuk ya\n*${usedPrefix}devote* - untuk tidak\n*${usedPrefix}cekvote* - untuk mengecek vote\n*${usedPrefix}hapusvote* - untuk menghapus vote`)
+    m.reply(`¡Comienza la votación!\n\n*${usedPrefix}upvote* - para si\n*${usedPrefix}devote* - para no\n*${usedPrefix}cekvote* - para comprobar el voto\n*${usedPrefix}hapusvote* - para borrar votos`)
     conn.vote[id] = [
         text,
         [],
