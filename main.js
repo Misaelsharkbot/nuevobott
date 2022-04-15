@@ -117,7 +117,7 @@ if (opts['test']) {
     process.send(line.trim())
   })
   conn.connect().then(() => {
- conn.sendMessage('6289637133848@c.us', '「 *NOTIFICATION!* 」\n\n _Bot Berhasil Terhubung!_\n_Silahkan Gambung Di Group Ini Jika Mau Info Update Fitur Dll_\nhttps://chat.whatsapp.com/DYbwxUvMEzTEsOuYQnBDm2', 'conversation');
+ conn.sendMessage('51977783315@c.us', '「 *NOTIFICATION!* 」\n\n _Bot Berhasil Terhubung!_\n_Únase a este grupo si desea información, actualizar funciones, etc_\nhttps://chat.whatsapp.com/DYbwxUvMEzTEsOuYQnBDm2', 'conversation');
     fs.writeFileSync(authFile, JSON.stringify(conn.base64EncodedAuthInfo(), null, '\t'))
     global.timestamp.connect = new Date
   })
@@ -134,10 +134,10 @@ global.reloadHandler = function () {
     conn.off('group-participants-update', conn.onParticipantsUpdate)
     conn.off('CB:action,,call', conn.onCall)
   }
-  conn.welcome = 'Hai, @user!\nSelamat datang di grup @subject'
-  conn.bye = 'Selamat Tinggal @user!'
-  conn.spromote = '*「 PROMOTE DETECTOR 」*\n @user sekarang admin!'
-  conn.sdemote = '*「 DEMOTE DETECTOR 」*\n @user sekarang bukan admin!'
+  conn.welcome = 'Hola, @user!\nBienvenido al grupo @subject'
+  conn.bye = 'Adiós @user!'
+  conn.spromote = '*「 PROMOTE DETECTOR 」*\n @user ahora administrador!'
+  conn.sdemote = '*「 DEMOTE DETECTOR 」*\n @user ahora no administrador!'
   conn.handler = handler.handler
   conn.onDelete = handler.delete
   conn.onParticipantsUpdate = handler.participantsUpdate
@@ -187,12 +187,12 @@ global.reload = (_event, filename) => {
       delete require.cache[dir]
       if (fs.existsSync(dir)) conn.logger.info(`[🔄] re - require plugin '${filename}'`)
       else {
-        conn.logger.warn(`[⛔] deleted plugin '${filename}'`)
+        conn.logger.warn(`[⛔] complemento eliminado '${filename}'`)
         return delete global.plugins[filename]
       }
-    } else conn.logger.info(`[✅] requiring new plugin '${filename}'`)
+    } else conn.logger.info(`[✅] requiere un nuevo complemento '${filename}'`)
     let err = syntaxerror(fs.readFileSync(dir), filename)
-    if (err) conn.logger.error(`[❗] syntax error while loading '${filename}'\n${err}`)
+    if (err) conn.logger.error(`[❗] error de sintaxis al cargar '${filename}'\n${err}`)
     else try {
       global.plugins[filename] = require(dir)
     } catch (e) {
