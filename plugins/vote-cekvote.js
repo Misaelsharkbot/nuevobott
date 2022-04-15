@@ -1,24 +1,24 @@
 let handler = async (m, { conn, usedPrefix }) => {
     let id = m.chat
     conn.vote = conn.vote ? conn.vote : {}
-    if (!(id in conn.vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${usedPrefix}mulaivote* - untuk memulai vote`
+    if (!(id in conn.vote)) throw `_*no hay vota en este grupo!*_\n\n*${usedPrefix}mulaivote* - para empezar a votar`
     
     let [reason, upvote, devote] = conn.vote[id]
     let mentionedJid = [...upvote, ...devote]
     m.reply(
-`*「 VOTE 」*
+`*「 VOTACION 」*
 
-*Alasan:* ${reason}
+*Motivo:* ${reason}
 
-*UPVOTE*
+*A FAVOR*
 _Total: ${upvote.length}_
 ${upvote.map(u => '@' + u.split('@')[0]).join('\n')}
 
-*DEVOTE*
+*ENCONTRA*
 _Total: ${devote.length}_
 ${devote.map(u => '@' + u.split('@')[0]).join('\n')}}
 
-*${usedPrefix}hapusvote* - untuk menghapus vote
+*${usedPrefix}hapusvote* - para borrar votos
 
 _by ariffb_
 `.trim(), false, { contextInfo: { mentionedJid } })
