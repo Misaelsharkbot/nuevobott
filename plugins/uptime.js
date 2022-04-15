@@ -3,8 +3,8 @@ let handler = async (m, { conn }) => {
     let uptime = clockString(_uptime)
 
 m.reply(`
-┌─〔 Status 〕
-├ Aktif selama ${uptime}
+┌─〔 ESTADO 〕
+├ Activo durante ${uptime}
 └────
     `.trim())
 }
