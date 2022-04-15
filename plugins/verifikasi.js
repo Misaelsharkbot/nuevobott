@@ -2,8 +2,8 @@ async function handler(m, { conn,text }) {
   conn.verify = conn.verify ? conn.verify : {}
    user = DATABASE.data.users
    kode = Math.floor(Math.random() * 9999)
-   if (user[m.sender].registered) return m.reply('_*Kamu Sudah Terverifikasi!*_')
-   aww = await m.reply(`_Kode Verifikasi Adalah ${kode}, Reply Pesan Ini Dan Balas Pesan Ini Untuk Verifikasi! Kode Di Pesan Di Bawah Ini_\n\n_*©YUKIBOT*_`)
+   if (user[m.sender].registered) return m.reply('_*¡Estás verificado!*_')
+   aww = await m.reply(`_El código de verificación es ${kode}, ¡Responda este mensaje y responda este mensaje para verificación! Código en el mensaje de abajo_\n\n_*©YUKIBOT*_`)
      conn.verify[m.sender] = { code: kode, key: aww.key.id }
 }
 
