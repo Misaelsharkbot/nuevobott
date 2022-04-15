@@ -1,7 +1,7 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
 
-    if (!text) return conn.reply(m.chat, 'Harap Masukan Link', m)
+    if (!text) return conn.reply(m.chat, 'Por favor ingrese el Link', m)
 
   await m.reply('Shorting...')
 	axios.get(`https://api.xteam.xyz/shorturl/tinyurl?url=${text}&APIKEY=Dawnfrostkey`).then ((res) => {
