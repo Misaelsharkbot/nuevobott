@@ -21,17 +21,17 @@ pp = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-
 //*****************BAGIAN MENU*********************
 const defaultMenu = {
   before: `
-Hai, ${tag} 👋!
+Hola, ${tag} 👋!
 
 Tersisa *%limit Limit*
-Role *%role*
-Level *%level (%exp / %maxexp)* [%xp4levelup]
-%totalexp XP secara Total
+Rol *%role*
+Nivel *%level (%exp / %maxexp)* [%xp4levelup]
+%totalexp XP en total
 
 ❏ *T I M E*
-- Tanggal: *%week %weton, %date*
+- Fecha: *%week %weton, %date*
 - Tanggal Islam: *%dateIslamic*
-- Waktu: *%time*
+- Tiempo: *%time*
 
 ❏ *C R E A T O R*
 - ${ow}
@@ -42,7 +42,7 @@ _%github_
 https://instagram.com/johannes28_
 
 %readmore`.trimStart(),
-  header: '❏ *%category*',
+  encabezamiento: '❏ *%category*',
   body: '» %cmd %islimit %isPremium',
   footer: '\n',
   after: `
@@ -169,28 +169,28 @@ ${'```%npmdesc```'}
   }
 
   try {
-  	const jam = moment.tz('Asia/Jakarta').format('HH')
+  	const jam = moment.tz('America/New_York').format('HH')
  var ucapanWaktu = 'Selamat Pagi 🌄'
 
 				if (jam >= '03' && jam <= '10') {
 
-				ucapanWaktu = 'Selamat Pagi 🌄'
+				ucapanWaktu = 'Buenos Dias 🌄'
 
 				} else if (jam >= '10' && jam <= '13') {
 
-				ucapanWaktu = 'Selamat Siang ☀️'
+				ucapanWaktu = 'Buena tardes ☀️'
 
 				} else if (jam >= '13' && jam <= '18') {
 
-				ucapanWaktu = 'Selamat Sore 🌅'
+				ucapanWaktu = 'Buena tardes 🌅'
 
 				} else if (jam >= '18' && jam <= '23') {
 
-				ucapanWaktu = 'Selamat Malam 🌙'
+				ucapanWaktu = 'Buenas noches 🌙'
 
 				} else {
 
-				ucapanWaktu = 'Selamat Malam 🌙'
+				ucapanWaktu = 'Buenas noches 🌙'
 
 				}
 const ftroli = {
@@ -291,9 +291,9 @@ const ftroli = {
         "listMessage": {
           "title": `${ucapanWaktu} ${name} 👋`,
           "description": `❏ *U S E R   I N F O*
-• Nama : ${name}
-${about != 401 ? '• Bio : ' + about : 'There are not any'} 
-• Tag : ${tag}
+• Nombre : ${name}
+${about != 401 ? '• Biografia : ' + about : 'No hay ninguno'} 
+• Etiqueta : ${tag}
 • Limit : ${limit} 
 • Status: ${global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) ? 'Owner 🗿' : 'Users ⚔️'}
 • Premium : ${prem ? 'User Premium' : 'Gratisan'}
@@ -302,9 +302,9 @@ ${about != 401 ? '• Bio : ' + about : 'There are not any'}
 ❏ *S T A T U S   I N F O*
 • *Total User :* ${Object.keys(global.DATABASE._data.users).length}
 • *Jadibot :* ${totaljadibot.length}
-• *Blocked :* ${conn.blocklist.length}
-• *Chat Banned :* ${Object.entries(global.DATABASE.data.chats).filter(chat => chat[1].isBanned).length}
-• *Pengguna Terbanned:* ${Object.entries(global.DATABASE._data.users).filter(user => user[1].banned).length}
+• *Bloquedos :* ${conn.blocklist.length}
+• *Chats baneados :* ${Object.entries(global.DATABASE.data.chats).filter(chat => chat[1].isBanned).length}
+• *Usuario prohibido:* ${Object.entries(global.DATABASE._data.users).filter(user => user[1].banned).length}
 
 
 ❏ 𝙏𝙄𝙈𝙀
@@ -349,24 +349,24 @@ Note: Jika ada Fitur yg Error Lapor ke owner`,
                     "title": "✧────────────[  S T A T S  ]───────────────✧"
                }, {       
                   "rows": [{
-                  "title": `[🧾] Semua Perintah`,
-                  "description": "Memberikan Semua Fitur Bot",
+                  "title": `[🧾] Todos los comandos`,
+                  "description": "Proporciona todas las funciones de bot",
                   "rowId": ".? all"
                 }, {
                   "title": "[🕋] Islam",
-                  "description": "Menu Tentang Islam",
+                  "description": "Menú Acerca del Islam",
                   "rowId": ".? quran"
                 },  {
                   "title": "[🎮] Game",
-                  "description": "Menu Game",
+                  "description": "Menu de juegos",
                   "rowId": ".? game"
                 }, {
                   "title": "[🗺️] Epic Rpg",
-                  "description": "Menu Game RPG",
+                  "description": "Menu de juego RPG",
                   "rowId": ".? rpg"
                 }, {
                   "title": "[📈] XP",
-                  "description": "XP Dan Level",
+                  "description": "XP y nivel",
                   "rowId": ".? xp"
                 },  {
                   "title": "[🔞] NSFW",
@@ -374,23 +374,23 @@ Note: Jika ada Fitur yg Error Lapor ke owner`,
                   "rowId": ".? dewasa"
                 }, {
                   "title": "[🎇] Stiker",
-                  "description": "Menu Buat Stiker",
+                  "description": "Menú Crear sticker",
                   "rowId": ".? stiker"
                 }, {
-                  "title": "[🐚] Kerang Ajaib",
-                  "description": "Menurut Kerang ajaib....",
+                  "title": "[🐚] Bola Mágica",
+                  "description": "Según la bola mágica....",
                   "rowId": ".? kerangajaib"
                 }, {
-                  "title": "[📑] Quotes",
-                  "description": "Menu Quotes",
+                  "title": "[📑] Cotizaciones",
+                  "description": "Menu Cotizaciones",
                   "rowId": ".? quotes"
                 }, {
-                  "title": "[❤️] Jodoh",
-                  "description": "Menu Jodoh",
+                  "title": "[❤️] Compañero",
+                  "description": "Menú de emparejamiento",
                   "rowId": ".? jodoh"
                 }, {
                   "title": "[🏛️] Admin",
-                  "description": "Menu Admin Group",
+                  "description": "Menú de administración de grupo",
                   "rowId": ".? admin"
                 }, {
                   "title": "[🏢] Grup",
@@ -398,15 +398,15 @@ Note: Jika ada Fitur yg Error Lapor ke owner`,
                   "rowId": ".? grup"
                 }, {
                   "title": "[🔝] Premium",
-                  "description": "Menu Untuk Premium",
+                  "description": "Menú Para Premiums",
                   "rowId": ".? premium"
                 }, {
                   "title": "[🖥️] Internet",
-                  "description": "Cari Sesuatu Di Bot",
+                  "description": "Encuentra algo en Bot",
                   "rowId": ".? internet"
                 }, {
                   "title": "[🥷] Anonymous",
-                  "description": "Mainkan Anonymous Chat",
+                  "description": "Jugar chat anónimo",
                   "rowId": ".? anonymous"
                 }, {
                   "title": "[✒️] Nulis & Logo",
@@ -414,27 +414,27 @@ Note: Jika ada Fitur yg Error Lapor ke owner`,
                   "rowId": ".? nulis"
                 }, {
                   "title": "[📺] Downloader",
-                  "description": "Download Sesuatu Di Bot",
+                  "description": "Descargar Algo en Bot",
                   "rowId": ".? downloader"
                 }, {
                   "title": "[🔧] Tools",
-                  "description": "Tools Yang Bisa di Gunakan Di Bot",
+                  "description": "Herramientas que se pueden utilizar en bots",
                   "rowId": ".? tools"
                 }, {
                   "title": "[🎇] Fun",
-                  "description": "Menu Ceria",
+                  "description": "Menú Alegre",
                   "rowId": ".? fun"
                 }, {
                   "title": "[📂] Database",
-                  "description": "Simpan Sesuatu Di Bot",
+                  "description": "Guardar algo en Bot",
                   "rowId": ".? database"
                 }, {
                   "title": "[📝] Vote & Absen",
-                  "description": "Menu Vote & Absen",
+                  "description": "Menú Voto y Ausencia",
                   "rowId": ".? vote"
                 }, {
-                  "title": "[🎙️] Pengubah Suara",
-                  "description": "Ubah Suaramu",
+                  "title": "[🎙️] Cambiador de voz",
+                  "description": "Cambia tu voz",
                   "rowId": ".? audio"
                 }, {
                   "title": "[🤖] Jadi Bot",
@@ -442,26 +442,26 @@ Note: Jika ada Fitur yg Error Lapor ke owner`,
                   "rowId": ".? jadibot"
                 }, {
                   "title": "[⛩️] Anime",
-                  "description": "Cari Anime Di Bot",
+                  "description": "Buscar anime en bot",
                   "rowId": ".? anime"
                 }, {
                   "title": "[ℹ️] Info",
-                  "description": "Info Tentang Bot",
+                  "description": "Información sobre el bot",
                   "rowId": ".? info"
                 }, {
-                  "title": "Tanpa Kategori",
+                  "title": "Ninguna Categoria",
                   "description": "",
                   "rowId": ".? tanpakategori"
                 }, {
                   "title": "[🧑‍💻] Owner",
-                  "description": "Menu Khusu Owner",
+                  "description": "Menú especial del propietario",
                   "rowId": ".? owner"
                 }],
                                 "title": "✧────────────[ L I S T  M E N U ]────────────✧"
                                 }, {
                                 "rows": [{
                                 "title": "[🗳️] Donasi",
-                                "description": "Donasi kak, jangan enak pakenya doang",
+                                "description": "donar xd",
                                 "rowId": ".donasi"
                                 }, {
                                 "title": "[🔬] Script",
@@ -469,7 +469,7 @@ Note: Jika ada Fitur yg Error Lapor ke owner`,
                                 "rowId": ".sc"
                                 }, {
                                 "title": "[🎖️] Thanks To",
-                                "description": "Terima kasih banyak untuk user yang telah berpartisipasi dalam bot",
+                                "description": "Muchas gracias a los usuarios que han participado en el bot",
                                 "rowId": ".tqto"
                                 }],
                                 "title": "✧─────────────[ I N F O ]───────────────✧"
