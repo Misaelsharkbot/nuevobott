@@ -2,20 +2,20 @@ let limit = 50
 const { servers, ytv } = require('../lib/y2mate')
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
   await m.reply('Searching...')
-  if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+  if (!args || !args[0]) throw 'Uhm... ¿dónde está la URL?'
   let server = (args[1] || 'id4').toLowerCase()
   let { dl_link, thumb, title, filesize, filesizeF} = await ytv(args[0], servers.includes(server) ? server : 'id4')
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
   conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
-*${isLimit ? 'Pakai ': ''}Link:* ${dl_link}
+*TitULO:* ${title}
+*Tamaño del archivo:* ${filesizeF}
+*${isLimit ? 'Usar ': ''}Link:* ${dl_link}
 
-Video sedang dikirim,, harap tunggu sekitar 1 menit.
+Se esta enviando video,, por favor espere alrededor de 1 minuto.
 `.trim(), m)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp4', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
+*Titulo:* ${title}
+*Tamaño del archivo:* ${filesizeF}
 `.trim(), m)
 }
 handler.help = ['mp4','v',''].map(v => 'yt' + v + ' <url>')
