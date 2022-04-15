@@ -1,15 +1,15 @@
 let yts = require('yt-search')
 let handler = async (m, { text }) => {
-  if (!text) return m.reply('Cari apa?')
+  if (!text) return m.reply('¿Que estas buscando?')
   let results = await yts(text)
   let teks = results.all.map(v => {
     switch (v.type) {
       case 'video': return `
-» Judul : *${v.title}* 
+» Título : *${v.title}* 
 » Link : ${v.url}
-» Duration: ${v.timestamp}
-» Uploaded : ${v.ago}
-» Views : ${v.views} views
+» Duracion: ${v.timestamp}
+» subido : ${v.ago}
+» Vistas : ${v.views} views
       `.trim()
       case 'channel': return `
 *${v.name}* (${v.url})
