@@ -7,8 +7,8 @@ let handler = async (m, { conn, text, usedPrefix }) => {
 
     let [to, trans] = text.split`|`
 
-    if (!to) return conn.reply(m.chat, `Silahkan masukan parameter to\n contoh: \n\n${usedPrefix}tr id|thankyou`, m)
-    if (!trans) return conn.reply(m.chat, `Silahkan masukan parameter text\n contoh: \n\n${usedPrefix}tr id|thankyou`, m)
+    if (!to) return conn.reply(m.chat, `Ingrese el parámetro para\n ejemplo: \n\n${usedPrefix}tr id|thankyou`, m)
+    if (!trans) return conn.reply(m.chat, `por favor ingrese parámetros text\n Eemplo: \n\n${usedPrefix}tr id|thankyou`, m)
 
     try {
         const result = await translate(`${trans}`, {
