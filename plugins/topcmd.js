@@ -5,8 +5,8 @@ let handler = async (m, { conn, args }) => {
     let sortedCmd = stats.map(toNumber('total')).sort(sort('total'))
     let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 3)) : Math.min(1, sortedCmd.length)
     let capt = `
-┌「 *top ${len} perintah ${args[0] > 1 ? 's' : ''}* 」
-${sortedCmd.slice(0, len).map(({ name, total }, i) => `├ ${i + 1}. ${name.split`-`[1].replace(/.js/, '')} ( *${total}* digunakan )`).join`\n`}
+┌「 *top ${len} pedido ${args[0] > 1 ? 's' : ''}* 」
+${sortedCmd.slice(0, len).map(({ name, total }, i) => `├ ${i + 1}. ${name.split`-`[1].replace(/.js/, '')} ( *${total}* utilizado )`).join`\n`}
 └────`.trim()
     let file = await m.reply(capt)
     setTimeout(() => {
