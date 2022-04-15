@@ -47,9 +47,10 @@ let handler  = async (m, { conn, usedPrefix }) => {
                *ℒ⃝👾 B O T  S T A T I S T I C*
                
 👩🏻‍💻 *Owner:* @${global.kontak[0].split`@`[0]}
-🧪 *Mode:* ${global.opts['self'] ? 'Private' : 'Publik'}
+🧪 *Modo:* ${global.opts['self'] ? 'Private' : 'Publik'}
 📊 *Versi:* ${package.version}
-💻 *Platform:* Unbuntu Linux
+🚫 *Bloqueados: 93
+💻 *Platforma:* Unbuntu Linux
 🗃️ *Lib:* Baileys
 🏮 *Type:* NodeJs
 🧿 *Server:* ${os.hostname()}
@@ -62,15 +63,16 @@ let handler  = async (m, { conn, usedPrefix }) => {
 ⏰ *Uptime:* ${uptime}
 
 
+
 *ℒ⃝📱P H O N E  S T A T I S T I C*
 
 *🪀 Whatsapp V:* ${conn.user.phone.wa_version}
 *🛑 Ram:* ${format(os.totalmem() - os.freemem())} / ${format(os.totalmem())}
 *📈 MCC:* ${conn.user.phone.mcc}
 *📉 MNC:* ${conn.user.phone.mnc}
-*📊 OS Version:* ${os.platform()} ${conn.user.phone.os_version}
+*📊 OS Version:* ${os.platform()} 11
 *📫 Merk Hp:* ${conn.user.phone.device_manufacturer}
-*📮 Versi Hp:* ${conn.user.phone.device_model}
+*contacts:* unknown
 
 
 
