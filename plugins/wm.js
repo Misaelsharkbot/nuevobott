@@ -13,25 +13,25 @@ let handler = async (m, { conn, text }) => {
     if (/webp/.test(mime)) {
       let img = await q.download()
       let out = await webp2png(img)
-      if (!img) throw `balas stiker dengan perintah ${usedPrefix + command} <packname>|<author>`
+      if (!img) throw `Responde a un sticker con el comando ${usedPrefix + command} <packname>|<author>`
       stiker = await sticker(0, out, packname || '', author || '')
     } else if (/image/.test(mime)) {
       let img = await q.download()
       let link = await uploadImage(img)
-      if (!img) throw `balas gambar dengan perintah ${usedPrefix + command} <packname>|<author>`
+      if (!img) throw `Responde a un sticker con el comando ${usedPrefix + command} <packname>|<author>`
       stiker = await sticker(0, link, packname || '', author || '')
     } else if (/video/.test(mime)) {
-      if ((q.msg || q).seconds > 11) throw 'Maksimal 10 detik!'
+      if ((q.msg || q).seconds > 11) throw '¡10 segundos como máximo!'
       let img = await q.download()
       let link = await uploadFile(img)
-      if (!img) throw `balas video dengan perintah ${usedPrefix + command} <packname>|<author>`
+      if (!img) throw `Responde a un sticker con el comando ${usedPrefix + command} <packname>|<author>`
       stiker = await sticker(0, link, packname || '', author || '')
     }
   } finally {
     if (stiker) await conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
-    else throw 'Balas stikernya!'
+    else throw '¡Responde a un sticker!'
   }
 }
 handler.help = ['wm <packname>|<author>']
