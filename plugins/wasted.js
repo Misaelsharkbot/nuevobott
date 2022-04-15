@@ -10,8 +10,8 @@ let handler = async (m, { conn, text }) => {
  try {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw 'Tidak ada foto'
-  if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak support`
+  if (!mime) throw 'Sin imagen'
+  if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} no es compatible`
   let img = await q.download()
   let url = await uploadImage(img)
   let wasted = `https://some-random-api.ml/canvas/wasted?avatar=${url}`
@@ -20,7 +20,7 @@ let handler = async (m, { conn, text }) => {
     quoted: m
   })
  } catch (e) {
-   m.reply('Conversion Failed')
+   m.reply('La conversión falló')
   }
 }
 handler.help = ['wasted']
