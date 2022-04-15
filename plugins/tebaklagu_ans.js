@@ -5,7 +5,7 @@ handler.before = async function (m) {
   let id = m.chat
   if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/Ketik.*hint/i.test(m.quoted.contentText)) return !0
   conn.tebakgambar = conn.tebakgambar ? conn.tebakgambar : {}
-  if (!(id in conn.tebakgambar)) return m.reply('Soal itu telah berakhir')
+  if (!(id in conn.tebakgambar)) return m.reply('El asunto ha terminado')
   // if (m.quoted.id == conn.tebakgambar[id][0].id) { // undefined T_T
   let json = JSON.parse(JSON.stringify(conn.tebakgambar[id][1]))
   if (/^.*hint$/i.test(m.text)) return !0
@@ -14,8 +14,8 @@ handler.before = async function (m) {
     m.reply(`*Benar!*\n+${conn.tebakgambar[id][2]} XP`)
     clearTimeout(conn.tebakgambar[id][3])
     delete conn.tebakgambar[id]
-  } else if (similarity(m.text.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) m.reply(`*Dikit Lagi!*`)
-  else m.reply(`*Salah!*`)
+  } else if (similarity(m.text.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) m.reply(`*¡Un poco mas!*`)
+  else m.reply(`*¡Equivocado!*`)
   // }
   return !0
 }
