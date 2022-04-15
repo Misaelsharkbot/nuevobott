@@ -18,7 +18,7 @@ async function handler(m, { text }) {
             text,
             timeout: setTimeout(() => (m.reply('timed out'),delete confirmation[m.sender]), 60000)
         }
-        throw 'File exists, are you sure want to overwrite? (Y/n) (60s Timeout)'
+        throw 'El archivo existe, ¿está seguro de que desea sobrescribirlo? (Y/n) (tiempo 60s)'
     }
     res.body.pipe(createWriteStream(filename))
     res.body.once('end', () => {
